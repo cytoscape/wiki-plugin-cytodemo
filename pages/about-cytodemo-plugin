@@ -1,0 +1,37 @@
+{
+  "title": "About CytoDemo Plugin",
+  "story": [
+  {
+    "type": "paragraph",
+    "id": "b925b141e11bed08",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "cytodemo",
+    "id": "f26bf983f23e2959",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+],
+  "journal": [
+  {
+    "type": "create",
+    "item": {
+      "title": "About CytoDemo Plugin",
+      "story": [
+  {
+    "type": "paragraph",
+    "id": "b925b141e11bed08",
+    "text": "Here we describe the purpose of the plugin and include a sample."
+  },
+  {
+    "type": "cytodemo",
+    "id": "f26bf983f23e2959",
+    "text": "This is text in the new plugin. You can *double-click* to edit it too."
+  }
+]
+    },
+    "date": 1446997257000,
+    "certificate": "from mkplugin.sh"
+  }
+]
+}
