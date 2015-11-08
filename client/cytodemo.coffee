@@ -8,9 +8,7 @@ emit = ($item, item) ->
   cy = cytoscape {
     container: $cy,
 
-    elements: [
-      {} # 1 node
-    ]
+    elements: JSON.parse item.text
   }
 
 

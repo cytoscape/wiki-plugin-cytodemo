@@ -42,7 +42,7 @@ module.exports = function (grunt) {
     watch: {
       all: {
         files: ['client/*.coffee', 'test/*.coffee'],
-        tasks: ['coffee','mochaTest']
+        tasks: ['browserify:packageClient','mochaTest']
       }
     }
   });
