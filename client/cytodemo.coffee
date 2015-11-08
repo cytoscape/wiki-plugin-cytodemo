@@ -1,21 +1,21 @@
-
-expand = (text)->
-  text
-    .replace /&/g, '&amp;'
-    .replace /</g, '&lt;'
-    .replace />/g, '&gt;'
-    .replace /\*(.+?)\*/g, '<i>$1</i>'
+cytoscape = require 'cytoscape'
 
 emit = ($item, item) ->
-  $item.append """
-    <p style="background-color:#eee;padding:15px;">
-      #{expand item.text}
-    </p>
-  """
+  $cy = $ '<div style="width: 400px; height: 400px;"></div>'
+
+  $item.append $cy
+
+  cy = cytoscape {
+    container: $cy,
+
+    elements: [
+      {} # 1 node
+    ]
+  }
+
 
 bind = ($item, item) ->
   $item.dblclick -> wiki.textEditor $item, item
 
 window.plugins.cytodemo = {emit, bind} if window?
-module.exports = {expand} if module?
-
+module.exports = {} if module?

@@ -35,5 +35,8 @@
   },
   "engines": {
     "node": "0.10"
+  },
+  "dependencies": {
+    "cytoscape": "^2.5.0"
   }
 }

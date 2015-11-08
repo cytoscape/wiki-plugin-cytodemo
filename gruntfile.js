@@ -2,6 +2,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-mocha-test');
+  grunt.loadNpmTasks('grunt-browserify');
 
   grunt.initConfig({
     coffee: {
@@ -12,6 +13,19 @@ module.exports = function (grunt) {
         },
         src: ['client/*.coffee', 'test/*.coffee'],
         ext: '.js'
+      }
+    },
+
+    browserify: {
+      packageClient: {
+        src: ['./client/cytodemo.coffee'],
+        dest: './client/cytodemo.js',
+        options: {
+          transform: ['coffeeify'],
+          browserifyOptions: {
+            extensions: ".coffee"
+          }
+        }
       }
     },
 
@@ -33,7 +47,7 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('build', ['coffee', 'mochaTest']);
+  grunt.registerTask('build', ['browserify:packageClient', 'mochaTest']);
   grunt.registerTask('default', ['build']);
 
 };
