@@ -9,9 +9,9 @@
     "plugin"
   ],
   "author": {
-    "name": "Your Name",
-    "email": "you@example.com",
-    "url": "http://example.com"
+    "name": "Max Franz",
+    "email": "maxkfranz@gmail.com",
+    "url": "http://maxfranz.com"
   },
   "contributors": [],
   "scripts": {
@@ -28,10 +28,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fedwiki/wiki-plugin-cytodemo.git"
+    "url": "https://github.com/cytoscape/wiki-plugin-cytodemo.git"
   },
   "bugs": {
-    "url": "https://github.com/fedwiki/wiki-plugin-cytodemo/issues"
+    "url": "https://github.com/cytoscape/wiki-plugin-cytodemo/issues"
   },
   "engines": {
     "node": "0.10"
