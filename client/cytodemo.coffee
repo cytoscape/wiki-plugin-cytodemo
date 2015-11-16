@@ -1,7 +1,7 @@
 cytoscape = require 'cytoscape'
 
 emit = ($item, item) ->
-  $cy = $ '<div style="position: relative; width: 400px; height: 400px; border: 1px solid #ccc;"></div>'
+  $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
 
   $item.append $cy
   $item.append '<p>Learn more about <a href="http://js.cytoscape.org">Cytoscape</a>.</p>'
