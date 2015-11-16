@@ -1,4 +1,5 @@
 cytoscape = require 'cytoscape'
+dagre = require 'dagre'
 
 emit = ($item, item) ->
   $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
@@ -8,9 +9,30 @@ emit = ($item, item) ->
 
   cy = cytoscape {
     container: $cy,
-
     layout: { name: 'circle' },
-
+    boxSelectionEnabled: false,
+    autounselectify: true,
+    style: [
+      {
+        selector: 'node',
+        style: {
+          'content': 'data(id)',
+          'text-opacity': 0.5,
+          'text-valign': 'center',
+          'text-halign': 'right',
+          'background-color': '#11479e'
+        }
+      },
+      {
+        selector: 'edge',
+        style: {
+          'width': 4,
+          'target-arrow-shape': 'triangle',
+          'line-color': '#9dbaea',
+          'target-arrow-color': '#9dbaea'
+        }
+      }
+    ]
     elements: JSON.parse item.text
   }
 
