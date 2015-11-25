@@ -1,5 +1,8 @@
 cytoscape = require 'cytoscape'
 dagre = require 'dagre'
+cydagre = require 'cytoscape-dagre' # dagre ext for cytoscape (https://github.com/cytoscape/cytoscape.js-dagre)
+
+cydagre cytoscape dagre # register cy-dagre ext w/ cytoscape
 
 emit = ($item, item) ->
   $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
@@ -9,7 +12,7 @@ emit = ($item, item) ->
 
   cy = cytoscape {
     container: $cy,
-    layout: { name: 'circle' },
+    layout: { name: 'dagre' },
     boxSelectionEnabled: false,
     autounselectify: true,
     style: [
