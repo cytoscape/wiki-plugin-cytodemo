@@ -1,37 +1,224 @@
 {
   "title": "About CytoDemo Plugin",
   "story": [
-  {
-    "type": "paragraph",
-    "id": "b925b141e11bed08",
-    "text": "Here we describe the purpose of the plugin and include a sample."
-  },
-  {
-    "type": "cytodemo",
-    "id": "f26bf983f23e2959",
-    "text": "This is text in the new plugin. You can *double-click* to edit it too."
-  }
-],
-  "journal": [
-  {
-    "type": "create",
-    "item": {
-      "title": "About CytoDemo Plugin",
-      "story": [
-  {
-    "type": "paragraph",
-    "id": "b925b141e11bed08",
-    "text": "Here we describe the purpose of the plugin and include a sample."
-  },
-  {
-    "type": "cytodemo",
-    "id": "f26bf983f23e2959",
-    "text": "This is text in the new plugin. You can *double-click* to edit it too."
-  }
-]
+    {
+      "type": "paragraph",
+      "id": "b925b141e11bed08",
+      "text": "Cytoscape is a graph manipulation and rendering library. We use the javascript version to demonstrate rendering that hints at the possible integrations with wiki."
     },
-    "date": 1446997257000,
-    "certificate": "from mkplugin.sh"
-  }
-]
+    {
+      "type": "paragraph",
+      "id": "161c0598adc85e6c",
+      "text": "Here we duplicate an example from the the Cytoscape documentation. [http://js.cytoscape.org/demos/e52c2fbc0b09edd6ec46/ page]"
+    },
+    {
+      "type": "cytodemo",
+      "id": "f26bf983f23e2959",
+      "text": "{\"nodes\":[\n  {\"data\":{\"id\":\"n0\"}},\n  {\"data\":{\"id\":\"n1\"}},\n  {\"data\":{\"id\":\"n2\"}},\n  {\"data\":{\"id\":\"n3\"}},\n  {\"data\":{\"id\":\"n4\"}},\n  {\"data\":{\"id\":\"n5\"}},\n  {\"data\":{\"id\":\"n6\"}},\n  {\"data\":{\"id\":\"n7\"}},\n  {\"data\":{\"id\":\"n8\"}},\n  {\"data\":{\"id\":\"n9\"}},\n  {\"data\":{\"id\":\"n10\"}},\n  {\"data\":{\"id\":\"n11\"}},\n  {\"data\":{\"id\":\"n12\"}},\n  {\"data\":{\"id\":\"n13\"}},\n  {\"data\":{\"id\":\"n14\"}},\n  {\"data\":{\"id\":\"n15\"}},\n  {\"data\":{\"id\":\"n16\"}}],\n\"edges\":[\n  {\"data\":{\"source\":\"n0\",\"target\":\"n1\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n2\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n3\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n5\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n6\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n7\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n8\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n9\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n10\"}},\n  {\"data\":{\"source\":\"n11\",\"target\":\"n12\"}},\n  {\"data\":{\"source\":\"n12\",\"target\":\"n13\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n14\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n15\"}}]}"
+    },
+    {
+      "type": "markdown",
+      "id": "df049857d36d8589",
+      "text": "# Markup"
+    },
+    {
+      "type": "paragraph",
+      "id": "dba0455af0d0dc23",
+      "text": "We use JSON formatted elements as input to the graph rendering engine. [http://js.cytoscape.org/#notation/elements-json cytoscape]"
+    }
+  ],
+  "journal": [
+    {
+      "type": "create",
+      "item": {
+        "title": "About CytoDemo Plugin",
+        "story": [
+          {
+            "type": "paragraph",
+            "id": "b925b141e11bed08",
+            "text": "Here we describe the purpose of the plugin and include a sample."
+          },
+          {
+            "type": "cytodemo",
+            "id": "f26bf983f23e2959",
+            "text": "This is text in the new plugin. You can *double-click* to edit it too."
+          }
+        ]
+      },
+      "date": 1446997257000,
+      "certificate": "from mkplugin.sh"
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "{\n\t\t\t\t\t\tnodes: [\n\t\t\t\t\t\t\t{ data: { id: 'n0' } },\n\t\t\t\t\t\t\t{ data: { id: 'n1' } },\n\t\t\t\t\t\t\t{ data: { id: 'n2' } },\n\t\t\t\t\t\t\t{ data: { id: 'n3' } },\n\t\t\t\t\t\t\t{ data: { id: 'n4' } },\n\t\t\t\t\t\t\t{ data: { id: 'n5' } },\n\t\t\t\t\t\t\t{ data: { id: 'n6' } },\n\t\t\t\t\t\t\t{ data: { id: 'n7' } },\n\t\t\t\t\t\t\t{ data: { id: 'n8' } },\n\t\t\t\t\t\t\t{ data: { id: 'n9' } },\n\t\t\t\t\t\t\t{ data: { id: 'n10' } },\n\t\t\t\t\t\t\t{ data: { id: 'n11' } },\n\t\t\t\t\t\t\t{ data: { id: 'n12' } },\n\t\t\t\t\t\t\t{ data: { id: 'n13' } },\n\t\t\t\t\t\t\t{ data: { id: 'n14' } },\n\t\t\t\t\t\t\t{ data: { id: 'n15' } },\n\t\t\t\t\t\t\t{ data: { id: 'n16' } }\n\t\t\t\t\t\t],\n\t\t\t\t\t\tedges: [\n\t\t\t\t\t\t\t{ data: { source: 'n0', target: 'n1' } },\n\t\t\t\t\t\t\t{ data: { source: 'n1', target: 'n2' } },\n\t\t\t\t\t\t\t{ data: { source: 'n1', target: 'n3' } },\n\t\t\t\t\t\t\t{ data: { source: 'n4', target: 'n5' } },\n\t\t\t\t\t\t\t{ data: { source: 'n4', target: 'n6' } },\n\t\t\t\t\t\t\t{ data: { source: 'n6', target: 'n7' } },\n\t\t\t\t\t\t\t{ data: { source: 'n6', target: 'n8' } },\n\t\t\t\t\t\t\t{ data: { source: 'n8', target: 'n9' } },\n\t\t\t\t\t\t\t{ data: { source: 'n8', target: 'n10' } },\n\t\t\t\t\t\t\t{ data: { source: 'n11', target: 'n12' } },\n\t\t\t\t\t\t\t{ data: { source: 'n12', target: 'n13' } },\n\t\t\t\t\t\t\t{ data: { source: 'n13', target: 'n14' } },\n\t\t\t\t\t\t\t{ data: { source: 'n13', target: 'n15' } },\n\t\t\t\t\t\t]\n\t\t\t\t\t}"
+      },
+      "date": 1447602270783
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "{}"
+      },
+      "date": 1447603711774
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "[{}]"
+      },
+      "date": 1447603740484
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "{\n \"nodes\": [\n  {\n   \"data\": {\n    \"id\": \"n0\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n1\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n2\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n3\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n4\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n5\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n6\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n7\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n8\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n9\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n10\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n11\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n12\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n13\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n14\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n15\"\n   }\n  },\n  {\n   \"data\": {\n    \"id\": \"n16\"\n   }\n  }\n ],\n \"edges\": [\n  {\n   \"data\": {\n    \"source\": \"n0\",\n    \"target\": \"n1\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n1\",\n    \"target\": \"n2\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n1\",\n    \"target\": \"n3\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n4\",\n    \"target\": \"n5\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n4\",\n    \"target\": \"n6\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n6\",\n    \"target\": \"n7\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n6\",\n    \"target\": \"n8\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n8\",\n    \"target\": \"n9\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n8\",\n    \"target\": \"n10\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n11\",\n    \"target\": \"n12\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n12\",\n    \"target\": \"n13\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n13\",\n    \"target\": \"n14\"\n   }\n  },\n  {\n   \"data\": {\n    \"source\": \"n13\",\n    \"target\": \"n15\"\n   }\n  }\n ]\n}"
+      },
+      "date": 1447606320625
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "{\"nodes\":[{\"data\":{\"id\":\"n0\"}},{\"data\":{\"id\":\"n1\"}},{\"data\":{\"id\":\"n2\"}},{\"data\":{\"id\":\"n3\"}},{\"data\":{\"id\":\"n4\"}},{\"data\":{\"id\":\"n5\"}},{\"data\":{\"id\":\"n6\"}},{\"data\":{\"id\":\"n7\"}},{\"data\":{\"id\":\"n8\"}},{\"data\":{\"id\":\"n9\"}},{\"data\":{\"id\":\"n10\"}},{\"data\":{\"id\":\"n11\"}},{\"data\":{\"id\":\"n12\"}},{\"data\":{\"id\":\"n13\"}},{\"data\":{\"id\":\"n14\"}},{\"data\":{\"id\":\"n15\"}},{\"data\":{\"id\":\"n16\"}}],\"edges\":[{\"data\":{\"source\":\"n0\",\"target\":\"n1\"}},{\"data\":{\"source\":\"n1\",\"target\":\"n2\"}},{\"data\":{\"source\":\"n1\",\"target\":\"n3\"}},{\"data\":{\"source\":\"n4\",\"target\":\"n5\"}},{\"data\":{\"source\":\"n4\",\"target\":\"n6\"}},{\"data\":{\"source\":\"n6\",\"target\":\"n7\"}},{\"data\":{\"source\":\"n6\",\"target\":\"n8\"}},{\"data\":{\"source\":\"n8\",\"target\":\"n9\"}},{\"data\":{\"source\":\"n8\",\"target\":\"n10\"}},{\"data\":{\"source\":\"n11\",\"target\":\"n12\"}},{\"data\":{\"source\":\"n12\",\"target\":\"n13\"}},{\"data\":{\"source\":\"n13\",\"target\":\"n14\"}},{\"data\":{\"source\":\"n13\",\"target\":\"n15\"}}]}"
+      },
+      "date": 1447606422504
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "{\"nodes\":[\n  {\"data\":{\"id\":\"n0\"}},\n  {\"data\":{\"id\":\"n1\"}},\n  {\"data\":{\"id\":\"n2\"}},\n  {\"data\":{\"id\":\"n3\"}},\n  {\"data\":{\"id\":\"n4\"}},\n  {\"data\":{\"id\":\"n5\"}},\n  {\"data\":{\"id\":\"n6\"}},\n  {\"data\":{\"id\":\"n7\"}},\n  {\"data\":{\"id\":\"n8\"}},\n  {\"data\":{\"id\":\"n9\"}},\n  {\"data\":{\"id\":\"n10\"}},\n  {\"data\":{\"id\":\"n11\"}},\n  {\"data\":{\"id\":\"n12\"}},\n  {\"data\":{\"id\":\"n13\"}},\n  {\"data\":{\"id\":\"n14\"}},\n  {\"data\":{\"id\":\"n15\"}},\n  {\"data\":{\"id\":\"n16\"}}],\n\"edges\":[\n  {\"data\":{\"source\":\"n0\",\"target\":\"n1\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n2\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n3\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n5\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n6\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n7\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n8\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n9\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n10\"}},\n  {\"data\":{\"source\":\"n11\",\"target\":\"n12\"}},\n  {\"data\":{\"source\":\"n12\",\"target\":\"n13\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n14\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n15\"}}]}"
+      },
+      "date": 1447606583075
+    },
+    {
+      "type": "edit",
+      "id": "b925b141e11bed08",
+      "item": {
+        "type": "paragraph",
+        "id": "b925b141e11bed08",
+        "text": "Here we describe the purpose of the plugin and include a sample adapted from the Cytoscape.js demos. [http://js.cytoscape.org/demos/e52c2fbc0b09edd6ec46/ page]"
+      },
+      "date": 1447606753091
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "]{\"nodes\":[\n  {\"data\":{\"id\":\"n0\"}},\n  {\"data\":{\"id\":\"n1\"}},\n  {\"data\":{\"id\":\"n2\"}},\n  {\"data\":{\"id\":\"n3\"}},\n  {\"data\":{\"id\":\"n4\"}},\n  {\"data\":{\"id\":\"n5\"}},\n  {\"data\":{\"id\":\"n6\"}},\n  {\"data\":{\"id\":\"n7\"}},\n  {\"data\":{\"id\":\"n8\"}},\n  {\"data\":{\"id\":\"n9\"}},\n  {\"data\":{\"id\":\"n10\"}},\n  {\"data\":{\"id\":\"n11\"}},\n  {\"data\":{\"id\":\"n12\"}},\n  {\"data\":{\"id\":\"n13\"}},\n  {\"data\":{\"id\":\"n14\"}},\n  {\"data\":{\"id\":\"n15\"}},\n  {\"data\":{\"id\":\"n16\"}}],\n\"edges\":[\n  {\"data\":{\"source\":\"n0\",\"target\":\"n1\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n2\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n3\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n5\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n6\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n7\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n8\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n9\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n10\"}},\n  {\"data\":{\"source\":\"n11\",\"target\":\"n12\"}},\n  {\"data\":{\"source\":\"n12\",\"target\":\"n13\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n14\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n15\"}}]}"
+      },
+      "date": 1447607042110
+    },
+    {
+      "type": "edit",
+      "id": "f26bf983f23e2959",
+      "item": {
+        "type": "cytodemo",
+        "id": "f26bf983f23e2959",
+        "text": "{\"nodes\":[\n  {\"data\":{\"id\":\"n0\"}},\n  {\"data\":{\"id\":\"n1\"}},\n  {\"data\":{\"id\":\"n2\"}},\n  {\"data\":{\"id\":\"n3\"}},\n  {\"data\":{\"id\":\"n4\"}},\n  {\"data\":{\"id\":\"n5\"}},\n  {\"data\":{\"id\":\"n6\"}},\n  {\"data\":{\"id\":\"n7\"}},\n  {\"data\":{\"id\":\"n8\"}},\n  {\"data\":{\"id\":\"n9\"}},\n  {\"data\":{\"id\":\"n10\"}},\n  {\"data\":{\"id\":\"n11\"}},\n  {\"data\":{\"id\":\"n12\"}},\n  {\"data\":{\"id\":\"n13\"}},\n  {\"data\":{\"id\":\"n14\"}},\n  {\"data\":{\"id\":\"n15\"}},\n  {\"data\":{\"id\":\"n16\"}}],\n\"edges\":[\n  {\"data\":{\"source\":\"n0\",\"target\":\"n1\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n2\"}},\n  {\"data\":{\"source\":\"n1\",\"target\":\"n3\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n5\"}},\n  {\"data\":{\"source\":\"n4\",\"target\":\"n6\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n7\"}},\n  {\"data\":{\"source\":\"n6\",\"target\":\"n8\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n9\"}},\n  {\"data\":{\"source\":\"n8\",\"target\":\"n10\"}},\n  {\"data\":{\"source\":\"n11\",\"target\":\"n12\"}},\n  {\"data\":{\"source\":\"n12\",\"target\":\"n13\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n14\"}},\n  {\"data\":{\"source\":\"n13\",\"target\":\"n15\"}}]}"
+      },
+      "date": 1447607056478
+    },
+    {
+      "item": {
+        "type": "factory",
+        "id": "df049857d36d8589"
+      },
+      "id": "df049857d36d8589",
+      "type": "add",
+      "after": "f26bf983f23e2959",
+      "date": 1447649599567
+    },
+    {
+      "type": "edit",
+      "id": "df049857d36d8589",
+      "item": {
+        "type": "paragraph",
+        "id": "df049857d36d8589",
+        "text": "# Markup"
+      },
+      "date": 1447649618397
+    },
+    {
+      "type": "add",
+      "id": "dba0455af0d0dc23",
+      "item": {
+        "type": "paragraph",
+        "id": "dba0455af0d0dc23",
+        "text": "Write "
+      },
+      "after": "df049857d36d8589",
+      "date": 1447649695083
+    },
+    {
+      "type": "edit",
+      "id": "dba0455af0d0dc23",
+      "item": {
+        "type": "paragraph",
+        "id": "dba0455af0d0dc23",
+        "text": "We use JSON formatted elements as input to the graph rendering engine. [http://js.cytoscape.org/#notation/elements-json cytoscape]"
+      },
+      "date": 1447649811322
+    },
+    {
+      "type": "edit",
+      "id": "df049857d36d8589",
+      "item": {
+        "type": "markdown",
+        "id": "df049857d36d8589",
+        "text": "# Markup"
+      },
+      "date": 1447649854110
+    },
+    {
+      "type": "edit",
+      "id": "b925b141e11bed08",
+      "item": {
+        "type": "paragraph",
+        "id": "b925b141e11bed08",
+        "text": "Cytoscape is a graph manipulation and rendering library. We use the javascript version to render graphs as a demonstration that hints at the possible integrations with wiki."
+      },
+      "date": 1447650183283
+    },
+    {
+      "type": "add",
+      "id": "161c0598adc85e6c",
+      "item": {
+        "type": "paragraph",
+        "id": "161c0598adc85e6c",
+        "text": "Here we duplicate an example from the the Cytoscape documentation. [http://js.cytoscape.org/demos/e52c2fbc0b09edd6ec46/ page]"
+      },
+      "after": "b925b141e11bed08",
+      "date": 1447650261707
+    },
+    {
+      "type": "edit",
+      "id": "b925b141e11bed08",
+      "item": {
+        "type": "paragraph",
+        "id": "b925b141e11bed08",
+        "text": "Cytoscape is a graph manipulation and rendering library. We use the javascript version to demonstrate rendering that hints at the possible integrations with wiki."
+      },
+      "date": 1447650303315
+    }
+  ]
 }

@@ -13,17 +13,21 @@
     "email": "maxkfranz@gmail.com",
     "url": "http://maxfranz.com"
   },
-  "contributors": [],
+  "contributors": [
+    "Ward Cunningham"
+  ],
   "scripts": {
     "test": "mocha"
   },
   "devDependencies": {
+    "coffeeify": "^1.1.0",
+    "expect.js": "*",
     "grunt": "~0.4",
+    "grunt-browserify": "^4.0.1",
     "grunt-contrib-coffee": "~0.12",
     "grunt-contrib-watch": "~0.6",
-    "mocha": "*",
-    "expect.js": "*",
-    "grunt-mocha-test": "~0.12"
+    "grunt-mocha-test": "~0.12",
+    "mocha": "*"
   },
   "license": "MIT",
   "repository": {
