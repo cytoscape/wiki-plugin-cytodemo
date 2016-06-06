@@ -2,7 +2,7 @@ cytoscape = require 'cytoscape'
 dagre = require 'dagre'
 cydagre = require 'cytoscape-dagre' # dagre ext for cytoscape (https://github.com/cytoscape/cytoscape.js-dagre)
 
-cydagre cytoscape dagre # register cy-dagre ext w/ cytoscape
+cydagre cytoscape, dagre
 
 emit = ($item, item) ->
   $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
