@@ -4,6 +4,51 @@ cydagre = require 'cytoscape-dagre' # dagre ext for cytoscape (https://github.co
 
 cydagre cytoscape, dagre
 
+# from wiki-plugin-transport
+graphData = ($item) ->
+  graphs = []
+  candidates = $(".item:lt(#{$('.item').index($item)})")
+  for each in candidates
+    if $(each).hasClass 'graph-source'
+      graphs.push each.graphData()
+  graphs
+
+# from image-transporter
+# def merge (graphs)
+#   graph = Hash.new { |hash, key| hash[key] = [] }
+#   graphs.each do | obj |
+#     obj.each do | from, tos |
+#       have = graph[from]
+#       graph[from] = [have, tos].flatten.uniq
+#     end
+#   end
+#   graph
+# end
+
+merge = (graphs) ->
+  graph = {}
+  for obj in graphs
+    for from, tos of obj
+      have = graph[from] ||= []
+      for to in tos
+        have.push to if to not in have
+  graph
+
+elements = ($item, item) ->
+  return JSON.parse item.text if /\w/.test item.text
+  nodes = {}
+  edges = {}
+  graph = merge graphData $item
+  for from, tos of graph
+    nodes[from] = true
+    for to in tos
+      nodes[to] = true
+      edges["#{from}|||#{to}"] = true
+  dataEdge = (edge) -> {data: {source: edge[0], target:edge[1]}}
+  dataEdges = -> (dataEdge e.split '|||' for e,v of edges)
+  dataNodes = -> ({data: {id: n}} for n,v of nodes)
+  {nodes: dataNodes(), edges: dataEdges()}
+
 emit = ($item, item) ->
   $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
 
@@ -36,7 +81,7 @@ emit = ($item, item) ->
         }
       }
     ]
-    elements: JSON.parse item.text
+    elements: elements($item,item)
   }
 
 
