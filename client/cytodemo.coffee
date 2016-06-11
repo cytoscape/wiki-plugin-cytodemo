@@ -54,14 +54,20 @@ block = (event) ->
   event.stopPropagation()
 
 emit = ($item, item) ->
-  $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
+  $cy = $ '<div class="cytowiki" style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
   $item.append $cy
-  $item.append '<p>Learn more about <a href="http://js.cytoscape.org">Cytoscape</a>.</p>'
+
+  #
+  $caption = $ '<p></p>'
+  $caption.append 'Learn more about <a href="http://js.cytoscape.org">Cytoscape</a>.'
+  $fullscreenlink =  $ '<span> - <a id="cy-fullscreen" href="#">Full Screen</a>.</span>'
+  $caption.append $fullscreenlink
+  $item.append $caption
+
   $cy.on 'mousedown', block
   $cy.on 'tapped', block
 
-  cy = cytoscape {
-    container: $cy,
+  options = {
     layout: { name: 'dagre' },
     boxSelectionEnabled: false,
     autounselectify: true,
@@ -89,11 +95,49 @@ emit = ($item, item) ->
     elements: elements($item,item)
   }
 
+  options.container = $cy
+  cy = cytoscape options
+
   cy.on 'click', 'node', (e) ->
     node = e.cyTarget;
     page = $item.parents '.page' unless e.shiftKey
     wiki.doInternalLink node.id(), page
 
+  # create a lightbox to display fullscreen
+  $lightbox = $ '<div id="lightbox"></div>'
+  $lightbox.css {
+    "width" :"100%",
+    "height" : "100%",
+    "position": "fixed",
+    "background-color": "rgba(0,0,0,.7)",
+    "top": 0,
+    "right": 0,
+    "bottom": 0,
+    "left": 0,
+    }
+
+  # options
+  $close = $ '<a href="#" style="position : absolute; color : #FAFAFA; top : 50px; right : 50px">X</a>'
+  $close.on 'click', (e) ->
+    $lightbox.hide()
+    $cyfullscreen.find("canvas").remove() # delete graph instances
+
+  $lightbox.append $close
+  $lightbox.hide() # hide by default
+
+  # prevent adding multiple lightboxes
+  $("body").append $lightbox if $(".lightbox").length == 0
+
+  # add a second cytoscape graph to the lightbox
+  $cyfullscreen = $ '<div class="cyfullscreen" style="position: relative; width: 80vw; height: 80vh; border: 1px solid #ccc; margin : 4% auto; background-color: #F5F5F5; padding: 10px;"></div>'
+  $lightbox.append $cyfullscreen
+
+  $fullscreenlink.on "click", (e) ->
+    e.preventDefault()
+    options.container = $cyfullscreen
+    cyfullscreen = cytoscape options
+    console.log cyfullscreen
+    $lightbox.show()
 
 bind = ($item, item) ->
   $item.dblclick -> wiki.textEditor $item, item
