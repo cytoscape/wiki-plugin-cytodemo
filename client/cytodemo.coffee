@@ -49,11 +49,17 @@ elements = ($item, item) ->
   dataNodes = -> ({data: {id: n}} for n,v of nodes)
   {nodes: dataNodes(), edges: dataEdges()}
 
+block = (event) ->
+  event.preventDefault()
+  event.stopPropagation()
+
 emit = ($item, item) ->
   $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
   $item.append $cy
   $item.append '<p>Learn more about <a href="http://js.cytoscape.org">Cytoscape</a>.</p>'
-  console.log("ola cytoscape!")
+  $cy.on 'mousedown', block
+  $cy.on 'tapped', block
+
   cy = cytoscape {
     container: $cy,
     layout: { name: 'dagre' },
@@ -83,32 +89,10 @@ emit = ($item, item) ->
     elements: elements($item,item)
   }
 
-
-  cy.on 'mousedown', (e) ->
-      console.log "mousedown graph"
-
-  cy.on 'tapend', (e) ->
-      console.log "tapend graph"
-
-  cy.on 'mouseup', (e) ->
-      console.log "mouseup graph"
-
-  # mouse actions
-  cy.on 'mouseover', 'edge', (e) ->
-    edge = e.cyTarget;
-    console.log "edge: %s", edge.id()
-
-  cy.on 'mouseover', 'node', (e) ->
+  cy.on 'click', 'node', (e) ->
     node = e.cyTarget;
-    console.log "node: %s",node.id()
-
-  cy.on 'free', 'node', (e) ->
-    node = e.cyTarget;
-    console.log '%s :I am free !', node.id()
-
-  cy.on 'grab', 'node', (e) ->
-    node = e.cyTarget;
-    console.log '%s :I am grabbed...', node.id()
+    page = $item.parents '.page' unless e.shiftKey
+    wiki.doInternalLink node.id(), page
 
 
 bind = ($item, item) ->
