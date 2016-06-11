@@ -49,11 +49,16 @@ elements = ($item, item) ->
   dataNodes = -> ({data: {id: n}} for n,v of nodes)
   {nodes: dataNodes(), edges: dataEdges()}
 
+block = (event) ->
+  event.preventDefault()
+  event.stopPropagation()
+
 emit = ($item, item) ->
   $cy = $ '<div style="position: relative; width: 420px; height: 420px; border: 1px solid #ccc;"></div>'
-
   $item.append $cy
   $item.append '<p>Learn more about <a href="http://js.cytoscape.org">Cytoscape</a>.</p>'
+  $cy.on 'mousedown', block
+  $cy.on 'tapped', block
 
   cy = cytoscape {
     container: $cy,
