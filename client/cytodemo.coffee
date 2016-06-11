@@ -79,15 +79,20 @@ emit = ($item, item) ->
           'text-opacity': 0.5,
           'text-valign': 'center',
           'text-halign': 'right',
-          'background-color': '#11479e'
+          'background-color': '#11479e',
+          'width' : (d) ->
+            if d.degree() == 1 then 8 else d.degree()*5
+          'height' : (d) ->
+            if d.degree() == 1 then 8 else d.degree()*5
         }
       },
       {
         selector: 'edge',
         style: {
-          'width': 4,
+          'width': 2 ,
           'target-arrow-shape': 'triangle',
-          'line-color': '#9dbaea',
+          'line-color' : '#9dbaea',
+          'line-opacity': .7,
           'target-arrow-color': '#9dbaea'
         }
       }
