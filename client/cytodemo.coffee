@@ -89,6 +89,7 @@ emit = ($item, item) ->
       {
         selector: 'edge',
         style: {
+          'curve-style': 'bezier',
           'width': 2 ,
           'target-arrow-shape': 'triangle',
           'line-color' : '#9dbaea',
@@ -108,22 +109,25 @@ emit = ($item, item) ->
     page = $item.parents '.page' unless e.shiftKey
     wiki.doInternalLink node.id(), page
 
-  cy.on 'mouseover', 'node', (e) ->
-        e.cyTarget.style {
-          'border-width': 2,
-          'border-color': '#D84315',
-          'font-size' : (d) ->
-            size = Number(d.css("font-size").slice(0, -2))+10
-            size + "px"
-        }
+  applyGraphMouseBehaviors = (graph) ->
+    graph.on 'mouseover', 'node', (e) ->
+          e.cyTarget.style {
+            'border-width': 2,
+            'border-color': '#D84315',
+            'font-size' : (d) ->
+              size = Number(d.css("font-size").slice(0, -2))+10
+              size + "px"
+          }
 
-  cy.on 'mouseout', 'node',(e) ->
-        e.cyTarget.style {
-          'border-width': 0,
-          'font-size' : (d) ->
-            size = Number(d.css("font-size").slice(0, -2))-10
-            size + "px"
-        }
+    graph.on 'mouseout', 'node',(e) ->
+          e.cyTarget.style {
+            'border-width': 0,
+            'font-size' : (d) ->
+              size = Number(d.css("font-size").slice(0, -2))-10
+              size + "px"
+          }
+
+  applyGraphMouseBehaviors(cy)
 
   # create a lightbox to display fullscreen
   $lightbox = $ '<div id="lightbox"></div>'
@@ -158,6 +162,7 @@ emit = ($item, item) ->
     e.preventDefault()
     options.container = $cyfullscreen
     cyfullscreen = cytoscape options
+    # applyGraphMouseBehaviors(cyfullscreen)
     console.log cyfullscreen
     $lightbox.show()
 
