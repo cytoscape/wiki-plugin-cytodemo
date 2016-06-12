@@ -1,6 +1,6 @@
 {
   "name": "wiki-plugin-cytodemo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Federated Wiki - CytoDemo Plugin",
   "keywords": [
     "cytodemo",
@@ -14,7 +14,8 @@
     "url": "http://maxfranz.com"
   },
   "contributors": [
-    "Ward Cunningham"
+    "Ward Cunningham",
+    "Clément Renaud"
   ],
   "scripts": {
     "test": "mocha"
