@@ -25,6 +25,11 @@
       "type": "paragraph",
       "id": "dba0455af0d0dc23",
       "text": "We use JSON formatted elements as input to the graph rendering engine. [http://js.cytoscape.org/#notation/elements-json cytoscape]"
+    },
+    {
+      "type": "paragraph",
+      "id": "868d287ecedc6c18",
+      "text": "Say any whitespace to coax the plugin to look elsewhere for graph data. (No markup means delete.) We find graph-source and merge by the same mechanism as Transport. See [[About Transport Plugin]]"
     }
   ],
   "journal": [
@@ -219,6 +224,27 @@
         "text": "Cytoscape is a graph manipulation and rendering library. We use the javascript version to demonstrate rendering that hints at the possible integrations with wiki."
       },
       "date": 1447650303315
+    },
+    {
+      "type": "add",
+      "id": "868d287ecedc6c18",
+      "item": {
+        "type": "paragraph",
+        "id": "868d287ecedc6c18",
+        "text": "Say any whitespace to coax the plugin to look elsewhere for graph data. We find graph-source and merge by the same mechanism as Transport. See [[About Transport Plugin]]"
+      },
+      "after": "dba0455af0d0dc23",
+      "date": 1465181100255
+    },
+    {
+      "type": "edit",
+      "id": "868d287ecedc6c18",
+      "item": {
+        "type": "paragraph",
+        "id": "868d287ecedc6c18",
+        "text": "Say any whitespace to coax the plugin to look elsewhere for graph data. (No markup means delete.) We find graph-source and merge by the same mechanism as Transport. See [[About Transport Plugin]]"
+      },
+      "date": 1465181131807
     }
   ]
 }
